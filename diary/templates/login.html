@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    {% if succeed %}
+    <div class = "container">
+        <h3 class="text-muted">Python Flask App</h3>
+        <div class="jumbotron">
+            <h1>Congratulations!</h1>
+            <p><a class="btn btn-lg btn-success" href="{{url_for('show_home_page', _id = user_id)}}" role="button">Home</a>
+            </p>
+        </div>
+
+    </div>
+  {% else %}
+    <div class = "container">
+        <div class="jumbotron">
+            <h1>You have already used the email</h1>
+            <p class="lead"></p>
+            <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Sign up again</a>
+            </p>
+            <p><a class="btn btn-lg btn-success" href="SignIn" role="button">Sign in using this email</a>
+            </p>
+        </div>
+
+    </div>
+    {% endif %}
+{% endblock %}
